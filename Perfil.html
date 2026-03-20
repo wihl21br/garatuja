@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bendy-Song-Build_our_machine</title>
+    <link rel="shortcut icon" href="imagemq.ico" />
+    <style>
+      body > * {
+        border: 2px solid rgb(61, 33, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --grid-info-size: 230px;
+        --color-bg-hi: #190404;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: rgb(0, 0, 0);
+        display: grid;
+        grid-template-areas:
+          "social info   content"
+          "footer footer footer";
+        grid-template-columns: 110px var(--grid-info-size) 1fr;
+        grid-template-rows: 1fr 120px;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        min-height: 100svh;
+      }
+
+      aside {
+        background-color: #5f4c4c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-area: info;
+        text-align: center;
+        .thumb {
+          width: calc(var(--grid-info-size) - 20px);
+          height: calc(var(--grid-info-size) - 20px);
+          background-color: red;
+          border-radius: 50%;
+          flex: none;
+          z-index: 2;
+          overflow: clip;
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        section {
+          background-color: var(--color-bg-hi);
+          width: 100%;
+          height: 100%;
+          margin-top: -4rem;
+          padding-top: 4rem;
+          z-index: 1;
+          clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%);
+        }
+        .thumb:hover {
+        border: solid 10px rgb(241, 232, 182);
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+      }
+      }
+
+      main {
+        grid-area: content;
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        padding: 1rem;
+        h1 {
+          margin: 0 0 5rem 0;
+          font-size: 7rem;
+          font-weight: 300;
+          letter-spacing: 1px;;
+        }
+        .gallery {
+          display: grid;
+          border-radius: 30px;
+          grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
+          grid-auto-rows: auto;
+          gap: 1rem;
+          margin-top: 4rem;
+          .d2:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            rotate: 2deg;
+            background-color: rgb(39, 21, 1);
+            border-radius: 50px;
+            padding: 1rem;
+            h2 {
+              color: rgb(0, 0, 0);
+              background-color: rgb(255, 180, 0);
+              transform: scale(1.2);
+              transition: all 0.3s ease;
+              padding: 0.5rem;
+            }
+          }
+          .d2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            margin-top: 1rem;
+            justify-content: flex-start;
+            border-radius: 30px;
+            height: 100%;
+            border: 10px solid rgb(0, 0, 0);
+            h2 {
+              background-color: rgb(39, 21, 1);
+              padding: 0.5rem;
+              border-radius: 10px;
+            }
+            a {
+              border-radius: 50px;
+              img {
+                border-radius: 50px;
+                height: 100%;
+              }
+            }
+          }
+          h2 {
+            color: rgb(255, 180, 0);
+            font-size: 1.5rem;
+            text-align: center;
+          }
+
+          :nth-child(even) {
+            border: 5px solid rgb(170, 56, 3);
+            background-color: rgba(99, 49, 3, 0.836);
+          }
+          :first-child {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 1;
+            justify-content: flex-start;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 80px;
+
+          }
+        }
+        &:before {
+          content: "";
+          background-color: rgb(25, 4, 4);
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          clip-path: polygon(
+            0 calc(var(--grid-info-size) * 0.63),
+            100% calc(var(--grid-info-size) * 0.25),
+            100% 100%,
+            0 100%
+          );
+        }
+      }
+
+      h1 {
+        color: #c57700;
+        font-size: 20px;
+      }
+      p {
+        color: #ffb400;
+        font-size: 20px;
+      }
+
+      .social {
+        grid-area: social;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap:1rem;
+        img {
+          width: 6rem;
+          height: 100%;
+          border-radius: 30px;
+        }
+        img:hover {
+          transform: scale(1.2);
+          transition: all 0.3s ease;
+          rotate: 8deg;
+        }
+      }
+
+      footer {
+        grid-area: footer;
+      }
+      
+
+      h1:hover {
+        color: rgb(255, 180, 0);
+        transform: scaleY(1.2);
+        transition: all 0.3s ease;
+      }
+      .titulo1:hover {
+        color: rgb(226, 213, 33);
+        transform: scaleY(1.2);
+        transition: all 0.3s ease;
+      }
+      .titulo1{
+        width: 100%;
+        font-size: 2rem;
+        height: auto;
+        color:#ffb400;
+        margin-bottom: -40px;
+      }
+    </style>
+  </head>
+  <body>
+    <aside>
+      <div class="thumb">
+        <a href="https://github.com/wihl21br" target="_blank"
+          ><img
+            id="ok"
+            src="https://pbs.twimg.com/media/FTP7O4UWQAM56xR?format=jpg&name=360x360"
+        /></a>
+      </div>
+      <section>
+        <h1>William Ink. Huaman Lazo</h1>
+        <p>
+          Este é um desenvolvedor web especializado em tecnologias front-end.
+        </p>
+      </section>
+    </aside>
+    <main>
+      <article>
+        <h1>Bendy and the dark revival</h1>
+        <p>
+          A história gira em torno de Henry Stein, um ex-animador que retorna ao
+          estúdio a convite de seu antigo parceiro, Joey Drew. Lá, ele descobre
+          a Máquina de Tinta, uma invenção macabra usada para trazer os
+          personagens dos desenhos animados à vida, mas que acabou transformando
+          os funcionários em monstros de tinta deformados.
+        </p>
+      </article>
+      <h2 class="titulo1">Principais Personagens</h2>
+      <div class="gallery">
+        
+        <div class="d2">
+          <h2>Maquina de Tinta</h2>
+          <p>ok
+          </p>
+          <a href="https://bendy.fandom.com/wiki/Bendy_Wiki" target="_blank">
+            <!-- <img src="https://images.wallpapersden.com/image/download/bendy-and-the-dark-revival-gaming-2022_bWxraWqUmZqaraWkpJRobWllrWdmaW4.jpg"alt="Bendy" -->
+            />
+            <img src="Maquina_de_tinta.webp" alt="">
+          </a>
+        </div>
+        <div class="d2">
+          <h2>Audrey Drew</h2>
+          <p>
+            Audrey entra no estúdio a convite de Joey Drew e descobre a
+            Máquina de Tinta, que traz desenhos à vida — mas deu ruim:
+            transformou os funcionários em monstros de tinta.
+          </p>
+          <a href="https://bendy.fandom.com/wiki/Audrey_Drew" target="_blank">
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5e0eb28f-bac0-43b9-bd1d-fffbbe76fe22/dfj0qq4-1c20e0bf-1aae-44bd-80a9-3431c9f9c133.png/v1/fit/w_828,h_1064,q_70,strp/bendy_and_the_dark_revival__audrey_drew_fanart_by_netfuii_dfj0qq4-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTY0NiIsInBhdGgiOiIvZi81ZTBlYjI4Zi1iYWMwLTQzYjktYmQxZC1mZmZiYmU3NmZlMjIvZGZqMHFxNC0xYzIwZTBiZi0xYWFlLTQ0YmQtODBhOS0zNDMxYzlmOWMxMzMucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.xNdFVcN0XuLNZbFcxZ8CecQ2vjWRvB-zFKEQJvG_czA"alt="Empresa_criadora"/>
+          </a>
+        </div>
+        <div class="d2">
+          <h2>Bendy </h2>
+          <p>
+            Bendy
+          </p>
+          <a href="https://bendy.fandom.com/wiki/Henry_Stein" target="_blank">
+            <!-- <img src="https://cdn.polyspeak.ai/speakmaster/508bff880d79a4fa907864746f2147b2.webp" alt="Fandom"/> -->
+             <img src="https://preview.redd.it/theory-on-why-bendy-is-in-a-outfit-and-not-exactly-like-the-v0-v621nc5iutjf1.png?width=1080&crop=smart&auto=webp&s=3d5cbc3390e71eb0362a6157687d593da57447f0" alt="Fandom"/>
+          </a>
+        </div>
+        <div class="d2">
+          <h2>Alisson</h2>
+          <a href="https://bendy.fandom.com/wiki/Alisson" target="_blank">
+            <img src="alisson.webp" alt="" />
+          </a>
+        </div>
+        <div class="d2">
+          <h2>Alice Angel</h2>
+          <img src="https://scontent.fsqx2-1.fna.fbcdn.net/v/t39.30808-6/359849357_602698845325320_4041567793297801389_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=zDSo6kF_q34Q7kNvwEg9y05&_nc_oc=AdqU496AIUxbpItbcaX8N53OmcaPzEvVgYRRlF15eTrjfZOFGGadA0vdJSmY7TD_gebdULaGYu1fPGRN8a5TFMGg&_nc_zt=23&_nc_ht=scontent.fsqx2-1.fna&_nc_gid=OTfjN8igMFZ8qrin3k3pBA&_nc_ss=7a30f&oh=00_AfzXGlvqFTMma3pV1YxKql2Gxn11iEq-Ou9LUBLIpJAkug&oe=69C22DC1" alt="" />
+        </div>
+        <div class="d2">
+          <h2>Wilson Arch</h2>
+          <p>
+            A história gira em torno de Henry Stein, um ex-animador que retorna
+            ao estúdio a convite
+          </p>
+          <a>
+          <img src="wilson.webp" alt="" />
+          </a>  
+        </div>
+        <div class="d2">
+          <h2>Sammy Lawrence</h2>
+          <img src="SammyLawrence.webp" alt="Sammy Lawrence" />
+        </div>
+        <div class="d2">
+          <h2>Ink Demon</h2>
+          <img src="Ink_demonz_2-by-MLSpence.webp" alt="Ink Demon"/>
+        </div>
+      </div>
+    </main>
+
+    <div class="social">
+      <a href="https://www.facebook.com" target="_blank">
+        <img
+          src="174848.png"
+
+          alt="logo instagram"
+        />
+      </a>
+      <a href="https://www.twitter.com" target="_blank">
+        <img class="d2" src="174855.png" alt="logo instagram" />
+      </a>
+      <a href="https://www.instagram.com" target="_blank">
+        <img class="d2" src="733579.png" alt="logo instagram" />
+      </a>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Niel. All rights reserved.</p>
+      <audio id="meuAudio" src="Song_Bendy.mp3" controls></audio>
+    </footer>
+  </body>
+</html>
