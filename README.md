@@ -1,2 +1,2 @@
 # Garatujas de William
-##[HTML] HTML existe nao existe sem css
+##[HTML] HTML existe, mas nao existe sem css
