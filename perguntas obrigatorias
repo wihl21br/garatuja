@@ -1,1 +1,5 @@
-Pergunta 1: oque e get e set:
+Pergunta 1: diferença de get e set:
+Resposta: Get - Serve para recuperar ou ler o valor de um atributo. Ele sempre retorna uma informação e não altera o dado original.
+Set -  Serve para definir ou alterar o valor de um atributo. Ele geralmente recebe um parâmetro (o novo valor) e pode incluir regras de validação para garantir que o dado seja válido antes de ser salvo.
+
+
