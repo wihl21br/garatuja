@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bendy-Song-Build_our_machine</title>
+  <link rel="shortcut icon" href="imagemq.ico" />
+  <style>
+    body>* {
+      border: 2px solid rgb(61, 33, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --grid-info-size: 250px;
+      --color-bg-hi: #190404;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(0, 0, 0);
+      display: grid;
+      grid-template-areas:
+        "social info   content"
+        "footer footer footer";
+      grid-template-columns: 90px var(--grid-info-size) 1fr;
+      grid-template-rows: 1fr 120px;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      min-height: 100svh;
+    }
+
+    aside {
+      background-color: #5f4c4c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-area: info;
+      text-align: center;
+
+      .thumb {
+        width: calc(var(--grid-info-size) - 20px);
+        height: calc(var(--grid-info-size) - 20px);
+        background-color: red;
+        border-radius: 50%;
+        flex: none;
+        z-index: 2;
+        overflow: clip;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      section {
+        background-color: var(--color-bg-hi);
+        width: 100%;
+        height: 100%;
+        margin-top: -4rem;
+        padding-top: 4rem;
+        z-index: 0;
+      }
+
+      .thumb:hover {
+        border: solid 10px rgb(192, 183, 133);
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+      }
+    }
+
+    main {
+      background-color: black;
+      grid-area: content;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 1rem;
+
+      h1 {
+        margin: 0 0 5rem 0;
+        font-size: 7rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        ;
+      }
+
+      .gallery {
+        display: grid;
+        border-radius: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-auto-rows: auto;
+        gap: 1rem;
+        margin-top: 4rem;
+
+        .d2:hover {
+          transform: scale(1.1);
+          transition: all 0.3s ease;
+          rotate: 2deg;
+          background-color: rgb(39, 21, 1);
+          border-radius: 50px;
+          padding: 1rem;
+
+          h2 {
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 180, 0);
+            transform: scale(1.2);
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+          }
+        }
+
+        .d2 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem;
+          margin-top: 1rem;
+          justify-content: flex-start;
+          border-radius: 30px;
+          height: 100%;
+          background-color: black;
+          border: 10px solid rgb(86, 34, 0);
+
+          h2 {
+            background-color: rgb(39, 21, 1);
+            padding: 0.5rem;
+            border-radius: 10px;
+          }
+
+          a {
+            border-radius: 50px;
+
+            img {
+              border-radius: 50px;
+              height: 100%;
+            }
+          }
+        }
+
+        h2 {
+          color: rgb(255, 180, 0);
+          font-size: 1.5rem;
+          text-align: center;
+        }
+
+        :nth-child(even) {
+          border: 5px solid rgb(170, 56, 3);
+          background-color: rgba(99, 49, 3, 0.836);
+        }
+
+        :first-child {
+          grid-column: 1 / span 2;
+          grid-row: 1 / span 1;
+          justify-content: flex-start;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 80px;
+
+        }
+      }
+    }
+
+    h1 {
+      color: #c57700;
+      font-size: 20px;
+    }
+
+    p {
+      color: #ffb400;
+      font-size: 20px;
+    }
+
+    .social {
+      grid-area: social;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        width: 5rem;
+        height: 100%;
+
+      }
+
+      img:hover {
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+        rotate: 8deg;
+      }
+    }
+
+    footer {
+      grid-area: footer;
+    }
+
+
+    h1:hover {
+      color: rgb(255, 180, 0);
+      transform: scaleY(1.2);
+      transition: all 0.3s ease;
+    }
+
+    .titulo1:hover {
+      color: rgb(226, 213, 33);
+      transform: scaleY(1.2);
+      transition: all 0.3s ease;
+    }
+
+    .titulo1 {
+      width: 100%;
+      font-size: 2rem;
+      height: auto;
+      color: #ffb400;
+      margin-bottom: -50px;
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <div class="thumb">
+      <a href="https://github.com/wihl21br" target="_blank"><img id="ok"
+          src="https://pbs.twimg.com/media/FTP7O4UWQAM56xR?format=jpg&name=360x360" /></a>
+    </div>
+    <section>
+      <h1>Bendy</h1>
+      <p>
+        Bendy and the Dark Revival é muito lembrado porque entrega uma identidade visual única, misturando desenho
+        antigo com terror, o que chama atenção na hora. Além disso, a história cheia de mistérios e detalhes escondidos
+        faz a comunidade criar teorias e discutir o jogo por muito tempo. Personagens como o Ink Demon ajudam a reforçar
+        esse impacto, virando ícones. Somando isso com a popularidade entre streamers e a base de fãs já existente da
+        franquia, o jogo acabou criando uma fandom grande e ativa.
+      </p>
+    </section>
+  </aside>
+  <main>
+    <article>
+      <h1>Bendy and the Dark Revival</h1>
+      <p>
+        Em Bendy and the Dark Revival, você acompanha Audrey Drew, uma animadora que acaba presa dentro de um mundo de
+        tinta criado por uma máquina misteriosa. Esse lugar é uma versão distorcida de um estúdio de animação, cheio de
+        criaturas hostis e dominado pelo Ink Demon, que persegue tudo que se move. Enquanto tenta sobreviver, Audrey
+        explora o ambiente, descobre segredos sobre o passado do estúdio e percebe que aquele mundo funciona em um ciclo
+        controlado por um vilão. Ao longo da jornada, ela também descobre que tem uma ligação direta com a tinta e com a
+        própria origem daquele lugar, e precisa usar isso para quebrar o ciclo e tentar escapar.
+      </p>
+    </article>
+    <h2 class="titulo1">Principais Personagens</h2>
+    <div class="gallery">
+
+      <div class="d2">
+        <h2>Bendy the Ink Demon</h2>
+        <p>Bendy é uma criação da Ink Machine em Bendy and the Ink Machine, feita no Joey Drew Studios para dar vida ao
+          personagem de desenho. O experimento falhou, gerando uma versão instável e monstruosa conhecida como Ink
+          Demon. Ele se torna a principal ameaça do estúdio, preso no ciclo de tinta criado por Joey Drew e
+          representando o resultado da ambição sem controle.
+        </p>
+        <a href="https://bendy.fandom.com/wiki/Henry_Stein" target="_blank">
+          <img src="bendy.webp" alt="Bendy the Ink Demon" />
+        </a>
+      </div>
+      <div class="d2">
+        <h2>Wilson Arch</h2>
+        <p>
+          Wilson Arch é o principal antagonista de Bendy and the Dark Revival. Ele era um funcionário comum que acabou
+          assumindo o controle do mundo da Ink Machine, usando as regras do ciclo a seu favor. Wilson manipula tudo nos
+          bastidores, prende criaturas (inclusive o Ink Demon) e tenta impor ordem naquele caos. No fim, sua obsessão
+          por controle revela que ele só virou mais uma peça corrompida dentro do próprio sistema que queria dominar.
+        </p>
+        <a>
+          <img id="wilson" src="https://assets.mycast.io/actor_images/actor-wilson-arch-602751_large.jpg"
+            alt="Wilson" />
+        </a>
+      </div>
+      <div class="d2">
+        <h2>Audrey Drew</h2>
+        <p>
+          Audrey Drew é a protagonista de Bendy and the Dark Revival e foi criada a partir da Ink Machine como uma forma
+          “perfeita” de ser de tinta com consciência humana. Ela tem ligação direta com Joey Drew, sendo basicamente uma
+          versão criada por ele para continuar seu legado. Diferente das outras criações, Audrey consegue controlar
+          parcialmente seus poderes de tinta e entender o mundo ao redor. Ao longo da história, ela descobre que não é
+          totalmente humana e que faz parte do ciclo criado pela máquina, ficando presa nesse universo distorcido. No
+          final, ela aceita sua natureza e assume o controle da situação, quebrando parte do ciclo e mudando o rumo
+          daquele mundo de tinta.
+        </p>
+        <a href="https://bendy.fandom.com/wiki/Audrey_Drew" target="_blank">
+          <img
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5e0eb28f-bac0-43b9-bd1d-fffbbe76fe22/dfj0qq4-1c20e0bf-1aae-44bd-80a9-3431c9f9c133.png/v1/fit/w_828,h_1064,q_70,strp/bendy_and_the_dark_revival__audrey_drew_fanart_by_netfuii_dfj0qq4-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTY0NiIsInBhdGgiOiIvZi81ZTBlYjI4Zi1iYWMwLTQzYjktYmQxZC1mZmZiYmU3NmZlMjIvZGZqMHFxNC0xYzIwZTBiZi0xYWFlLTQ0YmQtODBhOS0zNDMxYzlmOWMxMzMucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.xNdFVcN0XuLNZbFcxZ8CecQ2vjWRvB-zFKEQJvG_czA"
+            alt="Audrey_Drew" />
+        </a>
+      </div>
+      <div class="d2">
+        <h2>Alisson</h2>
+        <p>Allison Angel é uma das criações mais estáveis da Ink Machine em Bendy and the Ink Machine, baseada na
+          personagem Alice Angel, mas diferente das versões corrompidas que surgiram antes. Ela foi criada a partir da
+          essência de Allison Pendle, o que explica por que mantém consciência, personalidade e senso moral, ao
+          contrário da versão instável conhecida como Twisted Alice.
+          Dentro do estúdio dominado pela tinta, Allison Angel age como uma sobrevivente lúcida, conseguindo resistir à
+          corrupção da máquina. Ela não só entende o funcionamento daquele mundo distorcido como também decide ajudar
+          outros, especialmente Henry Stein, guiando ele e oferecendo suporte em momentos críticos.</p>
+        <a href="https://bendy.fandom.com/wiki/Alisson" target="_blank">
+          <img src="alisson.webp" alt="" />
+        </a>
+      </div>
+
+      <div class="d2">
+        <h2>Henry Stein</h2>
+        <p>Henry Stein é o protagonista do jogo Bendy and the Ink Machine, um ex-animador do Joey Drew Studios que
+          retorna ao
+          estúdio e acaba preso no ciclo criado pela Ink Machine. Ao longo da história, ele enfrenta as criações de
+          tinta e descobre os experimentos por trás da máquina, tentando sobreviver e quebrar o loop. No fim, ele
+          representa alguém tentando escapar das consequências da ambição de Joey Drew.</p>
+        <img
+          src="https://static.wikia.nocookie.net/bendy-and-the-ink-machine/images/a/a9/Henry-by-MLSpence.png/revision/latest?cb=20221128233843"
+          alt="Henry Stein" />
+      </div>
+    </div>
+  </main>
+
+  <div class="social">
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="174848.png" alt="logo instagram" />
+    </a>
+    <a href="https://www.twitter.com" target="_blank">
+      <img class="d2" src="174855.png" alt="logo instagram" />
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+      <img class="d2" src="733579.png" alt="logo instagram" />
+    </a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 William Ink.Lazo All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
